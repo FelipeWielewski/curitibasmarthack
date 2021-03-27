@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-center align-items-center h-100 flex-column">
+  <div class="title mt-4">Curitiba, 9:41 - 14°C</div>
+  <div class="avatar-logo">
+    <img src="/logo.png" height="100" width="100" />
+  </div>
+  <div class="description mb-2" style="text-align: center;">
+    Você está protocolando <br>
+    '<%=@problem  %>'.
+  </div>
+
+  <div class="form-wrapper p-4 rounded d-flex flex-column mt-4 mb-4">
+    <label style="font-weight: 700; text-align: center;">Qual o seu seu CPF?</label>
+    <input class='form-control mt-2' type="text" placeholder="000.000.000-00" />
+  </div>
+  
+  <a class='btn btn-info btn-confirm' href="<%= sucesso_path(text: "Seu número de protocolo é: <b>#{@protocolo}</b>") %>"> confirmar </a>
+
+  <a class='btn btn-info btn-back' href="<%= repair_path %>"> voltar </a>
+
+</div>

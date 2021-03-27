@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center align-items-center h-100 flex-column">
+  <div class="title mt-4">Curitiba, 9:41 - 14°C</div>
+  <div class="avatar-logo">
+    <img src="logo.png" height="100" width="100" />
+  </div>
+  <div class="description mb-2" style="text-align: center;">
+    Você encontrou problemas na estação tubo <br>
+    'Rua Desembargador Motta' ?
+  </div>
+
+  <div class="bus d-flex flex-wrap mt-2 justify-content-around">
+    <a href="<%= repair_confirmation_path('luz queimada') %>">
+      <div class="bus-item rounded p-2 m-2 d-flex flex-row" style='width: 300px;'>
+          <div class="bus-icon d-flex justify-content-center">
+            <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-lightbulb"></i></div>
+          </div>
+          <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Luz está queimada!</span>
+      </div>
+    </a>
+    <a href="<%= repair_confirmation_path('lixo cheio') %>">
+      <div class="bus-item rounded p-2 m-2 d-flex flex-row mt-2" style='width: 300px;'>
+        <div class="bus-icon d-flex justify-content-center">
+          <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-trash"></i></div>
+        </div>
+        <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Lixo está cheio!</span>
+      </div>
+    </a>
+    <a href="<%= repair_confirmation_path('problemas de som') %>">
+      <div class="bus-item rounded p-2 m-2 d-flex flex-row mt-2" style='width: 300px;'>
+        <div class="bus-icon d-flex justify-content-center">
+          <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-volume-up"></i></div>
+        </div>
+        <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Problemas de som!</span>
+    </div>
+    </a>
+    <a href="<%= repair_confirmation_path('outros problemas') %>">
+      <div class="bus-item rounded p-2 m-2 d-flex flex-row mt-2" style='width: 300px;'>
+        <div class="bus-icon d-flex justify-content-center">
+          <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-cog"></i></div>
+        </div>
+        <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">outros problemas!</span>
+      </div>
+    </a>
+  </div> 
+
+  <a class='btn btn-info btn-back' href="<%= index_path %>"> voltar </a>
+
+</div>

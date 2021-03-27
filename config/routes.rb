@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/info', to: 'home#info'
   get '/next_bus', to: 'home#next_bus'
   get '/repair', to: 'home#repair'
+  get '/repair/confirmacao/:problem', to: 'home#repair_confirmation', as: :repair_confirmation
+  get '/sucesso/:text', to: 'home#sucesso', as: :sucesso
 end
