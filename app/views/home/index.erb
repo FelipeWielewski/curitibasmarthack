@@ -42,28 +42,36 @@
 
   <div class="actions d-flex flex-row justify-content-around w-100 mt-4">
     <div class="item p-4 rounded d-flex justify-content-center flex-column">
-      <div class="d-flex justify-content-center">
-        <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-volume-up"></i></div>
-      </div>
-      <span class="mt-2" style="text-align: center;">Mê avisa?</span>
+      <a href="<%= help_path %>">
+        <div class="d-flex justify-content-center">
+          <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-volume-up"></i></div>
+        </div>
+        <span class="mt-2" style="text-align: center;">Mê avisa?</span>
+      </a>
     </div>
     <div class="item p-4 rounded d-flex justify-content-center flex-column">
-      <div class="d-flex justify-content-center">
-        <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-bus"></i></div>
-      </div>
-      <span class="mt-2" style="text-align: center;">Qual ônibus devo pegar?</span>
+      <a href="<%= info_path %>">
+        <div class="d-flex justify-content-center">
+          <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-bus"></i></div>
+        </div>
+        <span class="mt-2" style="text-align: center;">Qual ônibus devo pegar?</span>
+      </a>
     </div>
     <div class="item p-4 rounded d-flex justify-content-center flex-column">
-      <div class="d-flex justify-content-center">
-        <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-clock"></i></div>
-      </div>
-      <span class="mt-2" style="text-align: center;">Qual próximo ônibus?</span>
+      <a href="<%= next_bus_path %>">
+        <div class="d-flex justify-content-center">
+          <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-clock"></i></div>
+        </div>
+        <span class="mt-2" style="text-align: center;">Qual próximo ônibus?</span>
+      </a>
     </div>
     <div class="item p-4 rounded d-flex justify-content-center flex-column">
-      <div class="d-flex justify-content-center">
-        <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-tools"></i></div>
-      </div>
-      <span class="mt-2" style="text-align: center;">Problemas no ponto de ônibus?</span>
+      <a href="<%= repair_path %>">
+        <div class="d-flex justify-content-center">
+          <div class="item-avatar rounded-circle d-flex justify-content-center align-items-center"> <i class="fas fa-tools"></i></div>
+        </div>
+        <span class="mt-2" style="text-align: center;">Problema no ponto de ônibus?</span>
+      </a>
     </div>
   </div >
 </div>
