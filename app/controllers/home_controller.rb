@@ -5,11 +5,15 @@ class HomeController < ApplicationController
 
   def help;end
 
-  def info;end
+  def info
+    @number = params[:number]
+  end
 
   def next_bus;end
 
   def repair;end
+
+  def list_bus;end
 
   def repair_confirmation
     @protocolo = rand(320..999).to_s.rjust(10, '0')

@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center align-items-center h-100 flex-column">
+  <div class="title time-clock mt-4"></div>
+  <div class="avatar-logo">
+    <img src="logo.png" height="100" width="100" />
+  </div>
+  <div class="description mb-2" style="text-align: center;">
+    Informações de 
+    'Linha 01 - Curitiba - SP'
+  </div>
+  <iframe
+   style="width: 100%; height: 60vh;"
+   src="https://www.urbs.curitiba.pr.gov.br/horario-de-onibus/<%= @number %>"></iframe>
+
+  <a class='btn btn-info btn-back' href="<%= list_bus_path %>"> voltar </a>
+
+</div>
