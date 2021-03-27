@@ -1,0 +1,55 @@
+body {
+  background-image: linear-gradient(#3ebd60, #277d3e);
+  height: 100vh;
+}
+
+.item-avatar {
+  width: 100px; 
+  height: 100px;
+  background-color: #277d3e;
+  color: white;
+  font-size: 50px;
+}
+.item > span {
+  color: #277d3e;
+}
+.title,.description {
+  color: white;
+  font-weight: 700;
+}
+.item {
+  background-color: #ededed;
+  font-weight: 700;
+  max-width: 150px;
+}
+.item:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.bus-status.more1 {
+  background-color: #34d15e;
+}
+.bus-status.more5 {
+  background-color: #2bab4d;
+}
+.bus-status.more10 {
+  background-color: #1e7d37;
+}
+
+
+.bus-item {
+  background-color: #ededed;
+}
+
+.bus-status {
+  height: 65px;
+  width: 70px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  overflow-wrap: unset;
+}
+.bus-text {
+  font-weight: 600;
+}
