@@ -4,47 +4,25 @@
     <img src="logo.png" height="100" width="100" />
   </div>
   <div class="description mb-2" style="text-align: center;">
-    Você está no ponto de onibus <br>
-    'Rua Desembargador Motta'
+    Você está no ponto de ônibus <br>
+    <b><%= @spot_name %></b>
   </div>
 
-  <div class="bus d-flex flex-wrap mt-2 justify-content-around">
-    <div class="bus-item rounded p-2 m-2 d-flex flex-row">
-      <div class="bus-icon d-flex justify-content-center">
-        <div class="bus-status more1 rounded-circle d-flex justify-content-center align-items-center">1 min.</div>
+  <div class="bus d-flex flex-wrap mt-2 justify-content-center">
+    <% @list_bus.sort_by { |st| -st[:delay].to_i }.reverse.each do |bus| %>
+      <div class="bus-item rounded p-2 m-2 d-flex flex-row">
+        <div class="bus-icon d-flex justify-content-center">
+          <%if bus[:delay] <= 1%>
+            <div class="bus-status more1 rounded-circle d-flex justify-content-center align-items-center"><%= bus[:delay]%> min.</div>
+          <%elsif bus[:delay] <= 15 %>
+            <div class="bus-status more5 rounded-circle d-flex justify-content-center align-items-center"><%= bus[:delay]%> min.</div>
+          <%else%>
+            <div class="bus-status more10 rounded-circle d-flex justify-content-center align-items-center">+<%= bus[:delay]%> min.</div>
+          <%end%>
+        </div>
+        <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3"><%= bus[:name]%></span>
       </div>
-      <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Linha 001 - CWB - SP</span>
-    </div>
-    <div class="bus-item rounded p-2 m-2 d-flex flex-row mt-2">
-      <div class="bus-icon d-flex justify-content-center">
-        <div class="bus-status more5 rounded-circle d-flex justify-content-center align-items-center">5 min.</div>
-      </div>
-      <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Linha 001 - CWB - SP</span>
-    </div>
-    <div class="bus-item rounded p-2 m-2 d-flex flex-row mt-2">
-      <div class="bus-icon d-flex justify-content-center">
-        <div class="bus-status more10 rounded-circle d-flex justify-content-center align-items-center">+10 min.</div>
-      </div>
-      <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Linha 001 - CWB - SP</span>
-    </div>
-    <div class="bus-item rounded p-2 m-2 d-flex flex-row mt-2">
-      <div class="bus-icon d-flex justify-content-center">
-        <div class="bus-status more10 rounded-circle d-flex justify-content-center align-items-center">+10 min.</div>
-      </div>
-      <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Linha 001 - CWB - SP</span>
-    </div>
-    <div class="bus-item rounded p-2 m-2 d-flex flex-row mt-2">
-      <div class="bus-icon d-flex justify-content-center">
-        <div class="bus-status more10 rounded-circle d-flex justify-content-center align-items-center">+10 min.</div>
-      </div>
-      <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Linha 001 - CWB - SP</span>
-    </div>
-    <div class="bus-item rounded p-2 m-2 d-flex flex-row mt-2">
-      <div class="bus-icon d-flex justify-content-center">
-        <div class="bus-status more10 rounded-circle d-flex justify-content-center align-items-center">+10 min.</div>
-      </div>
-      <span class="bus-text d-flex justify-content-center align-items-center ml-3 mr-3">Linha 001 - CWB - SP</span>
-    </div>
+    <% end %>
   </div> 
 
   <a class='btn btn-info btn-back' href="<%= index_path %>"> voltar </a>
