@@ -31,6 +31,8 @@
   <%= yield :javascripts %>
 
   <script>
+    var alert_sound = nil
+    var alert_sound_2 = nil
     function formatDate(date) {
         var str =
             ("00" + (date.getDate())).slice(-2)
@@ -61,19 +63,24 @@
       audioEl.play();
     }
 
-    function alert()
+    function alertaData()
     {
-      setTimeout(function() {
+      if(alert_sound != undefined) {
+        clearTimeout(alert_sound) 
+        clearTimeout(alert_sound_2) 
+      }
+
+      alert_sound = setTimeout(function() {
         var texto = 'Aviso! 050 - INTERBAIRROS V está chegando em 1 minuto'
         googlePlay(texto);
+      
+      }, 5000);
 
-        setTimeout(function () {
-          texto = 'Aviso! 165 - UNIVERSIDADES está chegando em 5 minuto'
-          googlePlay(texto);
+      alert_sound_2 = setTimeout(function() {
+        texto = 'Aviso! 165 - UNIVERSIDADES está chegando em 5 minuto'
+        googlePlay(texto);
 
-          alert();
-        }, 20000);
-      }, 10000);
+      }, 15000);
     }
 
     function updateTime()
@@ -89,7 +96,6 @@
     $(document).ready(function() {
       $(".title").click();
       updateTime();
-      alert();
     })
   </script>
 </html>
