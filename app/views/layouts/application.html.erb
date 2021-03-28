@@ -3,6 +3,7 @@
   <head>
     <title>SmartMobi - Painel Inteligente</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="referrer" content="no-referrer">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -24,6 +25,7 @@
     <div class="container">
       <%= yield %>
     </div>
+    <audio muted="muted" class='d-none' controls id="tts-audio"/>
   </body>
 
   <%= yield :javascripts %>
@@ -43,6 +45,37 @@
       return str;
     }
 
+    function googlePlay(text)
+    {
+      text = encodeURI(text)
+      lang = 'pt-br'
+          // Get the audio element
+      const audioEl = document.getElementById('tts-audio');
+
+      const url= `https://translate.google.com/translate_tts?ie=UTF-8&tl=${lang}&client=tw-ob&q=${text}`;
+
+      // add the sound to the audio element
+      audioEl.src = url;
+
+      //For auto playing the sound
+      audioEl.play();
+    }
+
+    function alert()
+    {
+      setTimeout(function() {
+        var texto = 'Aviso! 050 - INTERBAIRROS V está chegando em 1 minuto'
+        googlePlay(texto);
+
+        setTimeout(function () {
+          texto = 'Aviso! 165 - UNIVERSIDADES está chegando em 5 minuto'
+          googlePlay(texto);
+
+          alert();
+        }, 20000);
+      }, 20000);
+    }
+
     function updateTime()
     {
       dateNow = new Date()
@@ -54,7 +87,9 @@
     }
 
     $(document).ready(function() {
+      $(".title").click();
       updateTime();
+      alert();
     })
   </script>
 </html>
